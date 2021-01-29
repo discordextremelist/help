@@ -49,3 +49,22 @@ There is currently only one known option. If this does not work please refer you
   }
 }
 ```
+
+## JDA (requires 4.2.0 or higher)
+
+There are multiple options:
+1. Setting the default mentions that will be used for each MessageAction with `MessageAction.setDefaultMentions(Collection<Message.MentionType>)`, which can then be overriden with the next option
+2. Appending `.allowedMentions(Collection<Message.MentionType>)` after a MessageAction
+
+**╠ Example 1** In your main method for example
+```java
+EnumSet<Message.MentionType> disabled = EnumSet.of(Message.MentionType.EVERYONE, Message.MentionType.ROLE);
+EnumSet<Message.MentionType> mentions = EnumSet.complementOf(disabled); // all mentions except everyone and roles
+MessageAction.setDefaultMentions(mentions);
+```
+
+**╠ Example 2** After a MessageAction
+```java
+EnumSet<Message.MentionType> mentions = EnumSet.of(Message.MentionType.USER); // only user mentions
+channel.sendMessage(...).allowedMentions(mentions).queue();
+```
