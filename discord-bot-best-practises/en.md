@@ -21,7 +21,7 @@ Restrict yourself to a small number of prefixes to reduce the risk of collision 
 If you reply directly to a command, don't use a mention, they can lead to bot reply loops. Mentions are fine if a long-running command is executed, but private messages are a good alternative.
 
 5. **Don't use `/` prefix**
-If your bot has `/` as a prefix it'll interfere with the updated discord's slash commands ui, that means if there's a slash command with the same name, for example `/ping`, your bot's ping command will be unusable. You may use `/` as a backup prefix in case slash commands of your bot won't work, but that's allowed only if your bot has slash commands with the same name and functions.
+If your bot has `/` as a default prefix it'll interfere with the updated Discord's slash commands ui, that means if there's a slash command with the same name in the server, for example `/ping`, your bot's ping command will be unusable. You may use `/` as a backup prefix, but that's only allowed if your bot has the slash commands with the same name and functions.
 
 ## Commands
 
