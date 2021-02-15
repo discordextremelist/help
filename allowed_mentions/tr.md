@@ -38,7 +38,7 @@ const client = new Discord.Client({
 
 ## Eris (v0.12.0 veya daha günceli)
 
-Şu anda bilinen tek bir seçenek var. Bu işe yaramazsa lütfen [Eris Dökümantasyonlarına](https://abal.moe/Eris/docs/PrivateChannel#function-createMessage) bakın.
+Şu anda bilinen tek bir seçenek var. Bu işe yaramazsa lütfen bu [Eris Dökümantasyonlarına](https://abal.moe/Eris/docs/PrivateChannel#function-createMessage) bakın.
 
 **╚ Örnek** Bunu Eris ayarlarına ekleyin. [[src]](# "Franklin#8888 (425966117840748545)")
 ```js
