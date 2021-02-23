@@ -20,7 +20,7 @@ Restrict yourself to a small number of prefixes to reduce the risk of collision 
 4. **Don't overuse mentions**  
 If you reply directly to a command, don't use a mention, they can lead to bot reply loops. Mentions are fine if a long-running command is executed, but private messages are a good alternative.
 
-5. **Don't use `/` prefix**
+5. **Don't use `/` prefix**  
 If your bot has `/` as a default prefix it'll interfere with the updated Discord's slash commands ui, that means if there's a slash command with the same name in the server, for example `/ping`, your bot's ping command will be unusable. You may use `/` as a backup prefix, but that's only allowed if your bot has the slash commands with the same name and functions.
 
 ## Commands
@@ -33,7 +33,7 @@ If a user uses a command that does not exist, then let it fail silently.
 Do not have it reply with something like "invalid command". 
 Though if the command is correct, but arguments are wrong then it's okay to reply with "invalid args". If there is more than one bot in a server that shares a prefix, this can result in very obnoxious usage.
 
-3. **Sanitise mentions**
+3. **Sanitise mentions**  
 Commands should not be able to be abused to ping `@roles`, `@everyone` or `@here`. 
 This can be handled using `allowed_mentions`. (`allowed_mentions` object - [see the reference](https://discord.com/developers/docs/resources/channel#allowed-mentions-object), [allowed_mentions DEL help](https://github.com/discordextremelist/help/blob/master/allowed_mentions/en.md)).
     
