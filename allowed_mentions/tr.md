@@ -49,3 +49,22 @@ const client = new Discord.Client({
   }
 }
 ```
+
+## JDA ( v4.2.0 veya daha günceli)
+
+Birden çok seçenek var:
+1. Her MessageAction için kullanılacak varsayılan bahsetmeleri `MessageAction.setDefaultMentions (Collection <Message.MentionType>)`, ile ayarlama, bu daha sonra sonraki seçenekle geçersiz kılınabilir
+2. Bir MessageAction'dan sonra `.allowedMentions (Collection <Message.MentionType>)` ekleniyor.
+
+**╠ Örnek 1** Örneğin ana yönteminizde;
+```java
+EnumSet<Message.MentionType> disabled = EnumSet.of(Message.MentionType.EVERYONE, Message.MentionType.ROLE);
+EnumSet<Message.MentionType> mentions = EnumSet.complementOf(disabled); // all mentions except everyone and roles
+MessageAction.setDefaultMentions(mentions);
+```
+
+**╠ Örnek 2** MessageAction'dan sonra?
+```java
+EnumSet<Message.MentionType> mentions = EnumSet.of(Message.MentionType.USER); // only user mentions
+channel.sendMessage(...).allowedMentions(mentions).queue();
+```
