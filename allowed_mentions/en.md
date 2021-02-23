@@ -68,3 +68,10 @@ MessageAction.setDefaultMentions(mentions);
 EnumSet<Message.MentionType> mentions = EnumSet.of(Message.MentionType.USER); // only user mentions
 channel.sendMessage(...).allowedMentions(mentions).queue();
 ```
+
+## Discord.NET (requires 2.3.0 or higher)
+
+**╚ Example** for a single message:
+```csharp
+await ReplyAsync(..., allowedMentions: AllowedMentions.None)
+```
