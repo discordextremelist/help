@@ -49,3 +49,29 @@ Esta é a única opção conhecida. Se isto não funcionar por favor refira-se �
   }
 }
 ```
+
+## JDA (requer 4.2.0 ou superior)
+
+Existem múltiplas opções:
+1. Definir a menção predefinida que irá ser usada para cada MessageAction com `MessageAction.setDefaultMentions(Collection<Message.MentionType>)`, que posteriormente poderá ser sobreposta com a seguinte opção
+2. Acrescentar `.allowedMentions(Collection<Message.MentionType>)` após uma MessageAction
+
+**╠ Exemplo 1** No seu método main
+```java
+EnumSet<Message.MentionType> disabled = EnumSet.of(Message.MentionType.EVERYONE, Message.MentionType.ROLE);
+EnumSet<Message.MentionType> mentions = EnumSet.complementOf(disabled); // todas as menções exceto everyone e cargos
+MessageAction.setDefaultMentions(mentions);
+```
+
+**╠ Exemplo 2** Após uma MessageAction
+```java
+EnumSet<Message.MentionType> mentions = EnumSet.of(Message.MentionType.USER); // apenas menções a utilizadores
+channel.sendMessage(...).allowedMentions(mentions).queue();
+```
+
+## Discord.NET (requer 2.3.0 ou superior)
+
+**╚ Exemplo** Para uma única mensagem:
+```csharp
+await ReplyAsync(..., allowedMentions: AllowedMentions.None)
+```
